@@ -1,0 +1,30 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "AncestryMediaContent.js" ],
+      "matches": [ "http://trees.ancestry.com/tree/*AncestryMediaDownload=1", "https://trees.ancestry.com/tree/*AncestryMediaDownload=1", "http://trees.ancestry.co.uk/tree/*AncestryMediaDownload=1", "https://trees.ancestry.co.uk/tree/*AncestryMediaDownload=1" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Download media content from Ancestry.",
+   "icons": {
+      "128": "ancestry128.png",
+      "24": "ancestry24.png",
+      "48": "ancestry48.png"
+   },
+   "manifest_version": 2,
+   "name": "Ancestry Media Download",
+   "browser_action": {
+	  "default_icon": {
+		"24": "ancestry24.png"
+	  },
+      "default_title": "Ancestry Media Download",
+	  "default_popup": "popup.html"
+   },
+   "permissions": [ "tabs", "activeTab", "storage", "http://*/*", "https://*/*", "declarativeContent" ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.122"
+}
